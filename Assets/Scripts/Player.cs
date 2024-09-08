@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public Laser LaserPrefab;
     public Transform[] LaserMuzzles;
     public float LaserCooldown = 0.2f;
+    public AudioSource LaserPlayer;
 
     private float laserTimer;
     private int hp = 3;
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
         {
             Transform muzzle = LaserMuzzles[i];
             Instantiate(LaserPrefab, muzzle.position, muzzle.rotation);
+            LaserPlayer.Play();
         }
     }
 
